@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
     @Override
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
      * The method below change the score of team B on the screen
      * @param score
      */
-    public void displayForTeamB(int score){
+    public void displayForTeamB(int score) {
 
         TextView scoreBView = (TextView) findViewById(R.id.team_b_score);
         scoreBView.setText(String.valueOf(score));
@@ -103,5 +104,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void add1PointTeamB(View view){
         addTeam_b_score(1);
+    }
+
+    public void resetMethod(View v){
+        scoreTeamA=scoreTeamB=0;
+        displayForTeamA(scoreTeamA);
+        displayForTeamB(scoreTeamB);
     }
 }
